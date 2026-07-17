@@ -1,6 +1,6 @@
 # The Media Problem - Technical Documentation
 
-This repository houses the full-stack codebase for The Media Problem, a media literacy application designed to diagnose, educate, and analyze language and bias patterns in real-world media.
+This repository houses the full-stack codebase for The Media Problem, a media literacy application designed to diagnose, educate, and analyze language and bias patterns in real-world media. Available for live test at https://the-media-problem.onrender.com/
 
 ## Tech Stack & Architecture
 
