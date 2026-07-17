@@ -16,7 +16,7 @@ The application is structured as a full-stack SPA (Single Page Application) with
 ### Backend
 - Framework: Express (Node.js) running in ESM/CJS compatibility mode
 - TypeScript Runner: tsx (used for fast, direct typescript execution in development)
-- AI SDK: @google/genai (the official Google GenAI TypeScript SDK)
+- Featherless AI SDK: @google/genai (the official Google GenAI TypeScript SDK)
 - Compilation Tooling: esbuild (bundles server.ts and all relative imports into a single, production-ready dist/server.cjs file to optimize cold-start speed and ensure runtime compatibility)
 
 ---
