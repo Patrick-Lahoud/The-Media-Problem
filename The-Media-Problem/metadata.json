@@ -1,0 +1,6 @@
+{
+  "name": "The Media Problem",
+  "description": "An interactive media literacy application to learn how to spot media bias, with diagnostic tests and an AI bias detector.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
