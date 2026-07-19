@@ -1747,7 +1747,35 @@ export default function AIDetector() {
               <span>Link input detected! The system will fetch and extract content cleanly, removing ads, navigation menus, and footers to minimize token usage.</span>
             </motion.div>
           )}
-          {error && <p className="text-xs text-red-400 font-mono font-bold bg-red-950/15 border border-red-950/30 p-2.5 rounded-lg">{error}</p>}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`p-4 rounded-lg border text-sm font-serif ${
+                error.includes("Cloud Scraper") || error.includes("429") || error.includes("Requests")
+                  ? "bg-amber-950/10 border-amber-900/30 text-amber-200"
+                  : "bg-red-950/15 border-red-950/30 text-red-400 font-mono"
+              }`}
+            >
+              <div className="flex gap-2.5 items-start">
+                <AlertTriangle className={`w-5 h-5 shrink-0 mt-0.5 ${
+                  error.includes("Cloud Scraper") || error.includes("429") || error.includes("Requests")
+                    ? "text-amber-400"
+                    : "text-red-400"
+                }`} />
+                <div className="space-y-1 text-left">
+                  <h4 className="font-bold text-xs font-mono uppercase tracking-wider">
+                    {error.includes("Cloud Scraper") || error.includes("429") || error.includes("Requests")
+                      ? "Web Crawler Blocked by Source"
+                      : "Analysis Error Encountered"}
+                  </h4>
+                  <p className="leading-relaxed text-xs">
+                    {error}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Templates Presets */}

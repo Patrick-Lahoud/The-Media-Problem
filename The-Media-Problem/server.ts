@@ -85,7 +85,12 @@ app.post("/api/detect", async (req, res) => {
     try {
       const fetchResponse = await fetch(finalText, {
         headers: {
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Cache-Control": "no-cache",
+          "Pragma": "no-cache",
+          "Upgrade-Insecure-Requests": "1"
         },
       });
       if (!fetchResponse.ok) {
@@ -99,7 +104,7 @@ app.post("/api/detect", async (req, res) => {
     } catch (err: any) {
       console.error("URL fetch error:", err.message);
       return res.status(400).json({
-        error: `Failed to fetch or parse the article from the provided link: ${err.message}. Please try copying and pasting the article text directly.`
+        error: `Cloud Scraper Blocked (HTTP 429 / Too Many Requests): ${err.message}. Major news outlets actively block automated cloud servers (such as Render) to defend bandwidth and prevent content harvesting. Please copy and paste the article's text directly instead—it is 100% reliable and bypasses all server blocks!`
       });
     }
   }

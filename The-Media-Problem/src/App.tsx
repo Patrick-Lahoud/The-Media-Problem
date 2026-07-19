@@ -161,10 +161,17 @@ export default function App() {
         </AnimatePresence>
       </div>
 
-      {/* Clean Minimalist Footer */}
-      <footer className="border-t border-[#2C2C2B] py-6 text-center text-[10px] text-[#8F8E8C] font-mono space-y-1">
-        <p>the media problem • © 2026 Media Literacy Interactive Field Guide</p>
-        <p>Designed to neutralize influence objectively. Influence mechanisms are neutral; learn to spot them everywhere.</p>
+      {/* Clean Disclaimer Footer */}
+      <footer className="border-t border-[#2C2C2B] py-8 text-[10px] text-[#8F8E8C] font-mono max-w-3xl mx-auto w-full px-4">
+        <div className="bg-[#1A1A19] border border-[#2C2C2B] rounded-lg p-4 space-y-2">
+          <div className="flex items-center gap-1.5 text-white font-bold uppercase tracking-wider text-[9px]">
+            <Sparkles className="w-3 h-3 text-white" />
+            <span>Disclaimer & AI Notice</span>
+          </div>
+          <p className="leading-relaxed text-[#8F8E8C]">
+            This platform is an educational resource designed to demonstrate media framing and linguistic patterns. Analysis results are processed by artificial intelligence and may contain subjective interpretations or errors. All diagnostic scenarios, chapter lessons, quiz questions, and linguistic examples are hypothetical exercises created solely for instructional purposes and do not represent real-world entities, events, or viewpoints.
+          </p>
+        </div>
       </footer>
     </div>
   );
